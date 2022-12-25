@@ -4,6 +4,8 @@ Current general outline:
 
 0x88 board representation 
 
+support for FEN
+
 connect to GUI
 
 generate all possible moves
