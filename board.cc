@@ -6,9 +6,6 @@
 
 Board::Board() {
     load_fen(DEFAULT_FEN);
-    // pieces[A1] = R;
-    // pieces[H8] = r;
-    // pieces[A8] = R;
 }
 
 void Board::clear() {
@@ -95,6 +92,10 @@ void Board::load_fen(std::string fen) {
 
 
 }
+
+
+
+
 
 std::ostream& Board::print(std::ostream &out) {
     int col = 1; 

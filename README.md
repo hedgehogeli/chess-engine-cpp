@@ -8,7 +8,9 @@ support for FEN
 
 connect to GUI
 
-generate all possible moves
+generate all possible moves (pseudo legal)
+
+full legality check, (probably need to add attack array)
 
 test # of possibilities against stockfish or smth else at depth 3 or 4 (perft)
 

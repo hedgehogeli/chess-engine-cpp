@@ -3,6 +3,7 @@
 
 #include "piece.h"
 #include "board_util.h"
+#include "attackArray.h"
 
 #include <bitset>
 
@@ -17,15 +18,17 @@ rank = (0x88square & 112) + 1
 */
 
 class Board {
-    
+  public:
+
     bool toMove; // toMove = true for White, false for Black
-    char castling; // 1 = shortW, 2 = longW, 4 = shortB, 8 = longB
+    char castling; // & operator w/ 1 = shortW, 2 = longW, 4 = shortB, 8 = longB
     size_t draw50; // counter for 50 move draw
     Square enpassant;
 
     Piece pieces[128];
-    
-  public:
+    AttackArr attacks;
+
+
     Board();
 
     
@@ -34,6 +37,10 @@ class Board {
     void clearSq(Square sq);
 
     void load_fen(std::string fen);
+
+    bool isAttacked(Square sq, bool toMove) {
+        return attacks.isAttacked(sq, toMove);
+    }
 
     // print method
     std::ostream& print(std::ostream &out);
